@@ -58,6 +58,230 @@
           "9ec02630"
         ]
       ]
+    },
+    {
+      "id": "e9589735",
+      "type": "bastion",
+      "x": 715,
+      "y": 90
+    },
+    {
+      "id": "9b388960",
+      "type": "virtualNetwork",
+      "x": 945,
+      "y": 225,
+      "width": 600,
+      "height": 400,
+      "ipRange": "10.0.0.0/16"
+    },
+    {
+      "id": "8fd0d859",
+      "type": "database",
+      "x": 1125,
+      "y": 235,
+      "backupRetentionPeriod": 0,
+      "failover": false,
+      "skipNameResolution": false
+    },
+    {
+      "id": "8825778b",
+      "type": "cacheCluster",
+      "x": 950,
+      "y": 110,
+      "replicas": 0
+    },
+    {
+      "id": "e420670a",
+      "type": "link out",
+      "x": 1155,
+      "y": 355
+    },
+    {
+      "id": "2275dbbd",
+      "type": "cdn",
+      "x": 865,
+      "y": 335,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "63696a97",
+      "type": "loadBalancer",
+      "x": 150,
+      "y": 655,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "1b5c8fda",
+      "type": "dockerTask",
+      "x": 1130,
+      "y": 840,
+      "containers": [
+        {}
+      ]
+    },
+    {
+      "id": "348dd600",
+      "type": "dockerCluster",
+      "x": 365,
+      "y": 795,
+      "width": 240,
+      "height": 160
+    },
+    {
+      "id": "2dd2cb09",
+      "type": "dockerService",
+      "x": 595,
+      "y": 690,
+      "containers": [
+        {
+          "portMappings": [
+            80
+          ]
+        }
+      ],
+      "healthCheckPath": "/"
+    },
+    {
+      "id": "1ab889ad",
+      "type": "timer",
+      "x": 245,
+      "y": 520,
+      "timerType": "interval",
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "a37b704a",
+      "type": "topic",
+      "x": 315,
+      "y": 615,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "442860fb",
+      "type": "stream",
+      "x": 665,
+      "y": 560,
+      "shardCount": 1,
+      "wires": [
+        [
+          "38987195"
+        ]
+      ]
+    },
+    {
+      "id": "1daa7097",
+      "type": "function",
+      "x": 200,
+      "y": 395,
+      "outputs": 1,
+      "memorySize": 3008,
+      "timeout": 30,
+      "location": "inline",
+      "envVars": {},
+      "wires": [
+        [
+          "4cb4d5ff"
+        ]
+      ]
+    },
+    {
+      "id": "4cb4d5ff",
+      "type": "table",
+      "x": 400,
+      "y": 370,
+      "hashKeyType": "string",
+      "wires": [
+        [
+          "1d54b90f"
+        ]
+      ]
+    },
+    {
+      "id": "fb0e2744",
+      "type": "objectStore",
+      "x": 985,
+      "y": 520,
+      "publicPermissions": "none",
+      "websiteHosting": false,
+      "wires": [
+        [
+          "aaa8a164"
+        ]
+      ]
+    },
+    {
+      "id": "1cb88a80",
+      "type": "link in",
+      "x": 1040,
+      "y": 300,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "1163c3aa",
+      "type": "errors",
+      "x": 425,
+      "y": 585,
+      "wires": [
+        []
+      ]
+    },
+    {
+      "id": "38987195",
+      "type": "function",
+      "x": 810,
+      "y": 565,
+      "outputs": 1,
+      "memorySize": 3008,
+      "timeout": 30,
+      "location": "inline",
+      "envVars": {},
+      "wires": [
+        [
+          "fb0e2744"
+        ]
+      ]
+    },
+    {
+      "id": "aaa8a164",
+      "type": "function",
+      "x": 1015,
+      "y": 600,
+      "outputs": 1,
+      "memorySize": 3008,
+      "timeout": 30,
+      "location": "inline",
+      "envVars": {},
+      "wires": [
+        [
+          "1b5c8fda"
+        ]
+      ]
+    },
+    {
+      "id": "1d54b90f",
+      "type": "function",
+      "x": 525,
+      "y": 525,
+      "outputs": 1,
+      "memorySize": 3008,
+      "timeout": 30,
+      "location": "inline",
+      "envVars": {},
+      "wires": [
+        [
+          "442860fb"
+        ]
+      ]
     }
   ]
 }
